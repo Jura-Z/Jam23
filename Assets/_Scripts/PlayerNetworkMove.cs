@@ -13,6 +13,9 @@ public class PlayerNetworkMove : NetworkBehaviour {
 	float hInput;
 	float vInput;
 
+	public float jumpPower = 3.0f;
+	public float jumpDeceleration = 15.0f;
+
 	bool isGrounded = false;
 	GameObject groundedOn = null;
 
@@ -60,9 +63,9 @@ public class PlayerNetworkMove : NetworkBehaviour {
 		//vInput = Input.GetAxis("Vertical");
 
 		if (Input.GetKey (KeyCode.Space) && isGrounded)
-			vInput = 5;
+			vInput = jumpPower;
 		else
-			vInput = 0;
+			vInput = Mathf.MoveTowards(vInput, 0, Time.deltaTime * jumpDeceleration);
 
 		if (Input.GetMouseButton (0)) {
 			var worldMousePosition = Input.mousePosition;
