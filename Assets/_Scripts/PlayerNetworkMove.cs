@@ -60,9 +60,9 @@ public class PlayerNetworkMove : NetworkBehaviour {
 		//vInput = Input.GetAxis("Vertical");
 
 		if (Input.GetKey (KeyCode.Space) && isGrounded)
-			vInput = 5;
+			vInput = 3;
 		else
-			vInput = 0;
+			vInput = Mathf.MoveTowards(vInput, 0, Time.deltaTime * 20.0f);
 
 		if (Input.GetMouseButton (0)) {
 			var worldMousePosition = Input.mousePosition;
