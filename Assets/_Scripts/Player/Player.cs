@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     [SerializeField]
     private PlayerWaterPool waterPool;
 
-    public PlayerWaterPool WaterPool
+	public PlayerWaterPool WaterPool
     {
         get
         {

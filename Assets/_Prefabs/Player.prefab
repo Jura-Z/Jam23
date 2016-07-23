@@ -57,24 +57,9 @@ GameObject:
   - 114: {fileID: 114000012537748218}
   - 114: {fileID: 114000013254370180}
   - 114: {fileID: 114000012618019420}
+  - 114: {fileID: 114000013874021454}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1000014011688310
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000013997935020}
-  - 114: {fileID: 114000013962307454}
-  m_Layer: 0
-  m_Name: Water Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,27 +72,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012935290920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.31, z: 0}
+  m_LocalPosition: {x: 0, y: -53487.473, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000014256738876}
-  - {fileID: 4000013997935020}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &4000013997935020
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014011688310}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000012234746654}
-  m_RootOrder: 1
 --- !u!4 &4000014256738876
 Transform:
   m_ObjectHideFlags: 1
@@ -244,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3132289f5864e4d4d98a615fe04afdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterPool: {fileID: 114000013962307454}
+  waterPool: {fileID: 114000013874021454}
 --- !u!114 &114000013254370180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,19 +230,19 @@ MonoBehaviour:
   target: {fileID: 212000012262712454}
   player1AvatarImage: {fileID: 21300000, guid: 155d670f70baf9f4aaf883c519d15324, type: 3}
   player2AvatarImage: {fileID: 21300000, guid: 6843d7b9a1d9c344dbf623cc96cd462a, type: 3}
---- !u!114 &114000013962307454
+--- !u!114 &114000013874021454
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014011688310}
+  m_GameObject: {fileID: 1000012935290920}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb4f387d3172539489d7638d6da6b2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
-  poolCapacity: 10
+  amount: 10
+  poolCapacity: 50
 --- !u!212 &212000012262712454
 SpriteRenderer:
   m_ObjectHideFlags: 1

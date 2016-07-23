@@ -18,15 +18,17 @@ public class PlayerWaterPool : MonoBehaviour
         }
     }
 
-    public void Remove(int amount)
+    public bool Remove(int amount)
     {
         if (this.amount - amount < 0)
         {
             this.amount = 0;
+			return false;
         }
         else
         {
             this.amount -= amount;
         }
+		return true;
     }
 }

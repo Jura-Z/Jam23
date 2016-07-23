@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010033776816}
   - 114: {fileID: 114000012111843860}
+  - 58: {fileID: 58000010986853580}
   m_Layer: 0
   m_Name: Water Balloon
   m_TagString: Untagged
@@ -131,6 +132,20 @@ Transform:
   - {fileID: 4000010982417300}
   m_Father: {fileID: 4000010033776816}
   m_RootOrder: 0
+--- !u!58 &58000010986853580
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013518565912}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!95 &95000011246910008
 Animator:
   serializedVersion: 3
@@ -159,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6681a27b001e09347aa5689194ab5cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capacity: 3
+  capacity: 5
 --- !u!198 &198000013560479994
 ParticleSystem:
   m_ObjectHideFlags: 1

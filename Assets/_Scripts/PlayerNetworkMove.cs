@@ -16,6 +16,8 @@ public class PlayerNetworkMove : NetworkBehaviour {
 	public float jumpPower = 3.0f;
 	public float jumpDeceleration = 15.0f;
 
+	PlayerWaterPool pool;
+
 	bool isGrounded = false;
 	GameObject groundedOn = null;
 
@@ -37,7 +39,8 @@ public class PlayerNetworkMove : NetworkBehaviour {
 	{
 		if(isLocalPlayer == false) return;
 
-		SpawnBullet (this.transform.position, shootPosition);
+		if (pool.Remove(1))
+			SpawnBullet (this.transform.position, shootPosition);
 	}
 		
 	void SpawnBullet(Vector3 pos, Vector3 shootPosition)
@@ -53,6 +56,7 @@ public class PlayerNetworkMove : NetworkBehaviour {
 	{
 		bodyCollider = GetComponent<Collider2D> ();
 		body = GetComponent<Rigidbody2D>();
+		pool = GetComponent<PlayerWaterPool> ();
 	}
 
 	// Update is called once per frame
@@ -62,7 +66,7 @@ public class PlayerNetworkMove : NetworkBehaviour {
 		hInput = Input.GetAxis("Horizontal");
 		//vInput = Input.GetAxis("Vertical");
 
-		if (Input.GetKey (KeyCode.Space) && isGrounded)
+		if (Input.GetKey (KeyCode.W) && isGrounded)
 			vInput = jumpPower;
 		else
 			vInput = Mathf.MoveTowards(vInput, 0, Time.deltaTime * jumpDeceleration);
@@ -99,7 +103,6 @@ public class PlayerNetworkMove : NetworkBehaviour {
 
 		if(coll.gameObject.tag == "Ground")
 		{
-			Debug.Log ("2");
 			foreach(ContactPoint2D contact in coll.contacts)
 			{
 				if(contact.normal.y > 0.5)
