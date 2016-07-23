@@ -5,13 +5,46 @@ using UnityEngine.Networking;
 public class PlayerNetworkMove : NetworkBehaviour {
 
 	public float moveSpeed = 5f;
+	public GameObject bullet;
 
+	Collider bodyCollider;
 	Rigidbody body; // Used to cache the RigidBody
 	float hInput;
 	float vInput;
 
+	[Command]
+	void CmdFire(Vector3 shootPosition)
+	{
+		RpcFire(shootPosition);
+	}
+
+	[ClientRpc]
+	void RpcFire(Vector3 shootPosition)
+	{
+		if(isLocalPlayer) return;
+
+		SpawnBullet (this.transform.position, shootPosition);
+	}
+
+	void Fire(Vector3 shootPosition)
+	{
+		if(isLocalPlayer == false) return;
+
+		SpawnBullet (this.transform.position, shootPosition);
+	}
+		
+	void SpawnBullet(Vector3 pos, Vector3 shootPosition)
+	{
+		GameObject bulletGO = NetworkBehaviour.Instantiate (bullet, pos, Quaternion.identity) as GameObject;
+		var forward = (shootPosition - pos).normalized;
+		bulletGO.transform.forward = forward;
+		bulletGO.GetComponent<Rigidbody> ().velocity = forward * 20.0f;
+		Physics.IgnoreCollision (bodyCollider, bulletGO.GetComponent<Collider> ());
+	}
+
 	void Awake()
 	{
+		bodyCollider = GetComponent<Collider> ();
 		body = GetComponent<Rigidbody>();
 	}
 
@@ -21,6 +54,13 @@ public class PlayerNetworkMove : NetworkBehaviour {
 		// running on the local player object
 		hInput = Input.GetAxis("Horizontal");
 		vInput = Input.GetAxis("Vertical");
+
+		if (Input.GetMouseButton (0)) {
+			var worldMousePosition = Input.mousePosition;
+			worldMousePosition.z = 10.0f;
+			worldMousePosition = Camera.main.ScreenToWorldPoint(worldMousePosition);
+			Fire (worldMousePosition);
+		}
 	}
 
 	void FixedUpdate()
