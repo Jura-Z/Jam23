@@ -1599,6 +1599,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 198000013560479994, guid: 90aa4916470f4ee4c8bfb8e7c3c33afb,
+        type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.key1.rgba
+      value: 16768768
+      objectReference: {fileID: 0}
+    - target: {fileID: 199000012267000296, guid: 90aa4916470f4ee4c8bfb8e7c3c33afb,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 05e8896fa97a91d4f86abe9e2ff3b3ea, type: 2}
+    - target: {fileID: 198000013560479994, guid: 90aa4916470f4ee4c8bfb8e7c3c33afb,
+        type: 2}
+      propertyPath: RotationBySpeedModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90aa4916470f4ee4c8bfb8e7c3c33afb, type: 2}
   m_IsPrefabParent: 0
