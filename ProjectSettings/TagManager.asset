@@ -55,3 +55,9 @@ TagManager:
   - name: UI
     uniqueID: 771169021
     locked: 0
+  - name: CollectableFX
+    uniqueID: 3060234537
+    locked: 0
+  - name: Collectable
+    uniqueID: 503682911
+    locked: 0
