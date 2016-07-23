@@ -4,16 +4,14 @@ using UnityEngine.Networking;
 
 public class PlayerNetworkMove : NetworkBehaviour {
 
-	Transform trans; // Used to cache the transform
+	public float moveSpeed = 5f;
+
 	Rigidbody body; // Used to cache the RigidBody
 	float hInput;
 	float vInput;
-	float rotationSpeed = 90f;
-	float moveSpeed = 5f;
 
 	void Awake()
 	{
-		trans = transform;
 		body = GetComponent<Rigidbody>();
 	}
 
