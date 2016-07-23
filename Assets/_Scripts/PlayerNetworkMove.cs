@@ -84,8 +84,12 @@ public class PlayerNetworkMove : NetworkBehaviour {
 
 		var mov = new Vector2 (hInput, vInput);
 
-		// Handle forward movement
-		body.MovePosition(body.position + mov * moveSpeed * Time.deltaTime);
+        Vector2 playerPosition = Camera.main.WorldToViewportPoint(body.position);
+        playerPosition.x = Mathf.Clamp(playerPosition.x, 0f, 1f);
+        playerPosition.y = Mathf.Clamp(playerPosition.y, 0f, 1f);
+        playerPosition = Camera.main.ViewportToWorldPoint(playerPosition);
+        // Handle forward movement
+        body.MovePosition(playerPosition + mov * moveSpeed * Time.deltaTime);
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
