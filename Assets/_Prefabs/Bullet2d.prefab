@@ -54,9 +54,8 @@ GameObject:
   - 50: {fileID: 50000010374038062}
   - 114: {fileID: 114000010029495054}
   - 114: {fileID: 114000011034283796}
-  - 114: {fileID: 114000013820140202}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Bullet2d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +97,7 @@ Transform:
   m_GameObject: {fileID: 1000010094896506}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000014256738876}
@@ -133,7 +132,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.11
 --- !u!114 &114000010029495054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,22 +147,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 240
-    i1: 249
-    i2: 62
-    i3: 102
-    i4: 121
-    i5: 132
-    i6: 196
-    i7: 24
-    i8: 56
-    i9: 221
-    i10: 82
-    i11: 132
-    i12: 198
-    i13: 80
-    i14: 88
-    i15: 60
+    i0: 156
+    i1: 99
+    i2: 25
+    i3: 179
+    i4: 35
+    i5: 38
+    i6: 52
+    i7: 168
+    i8: 201
+    i9: 166
+    i10: 39
+    i11: 156
+    i12: 243
+    i13: 55
+    i14: 224
+    i15: 238
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
 --- !u!114 &114000011034283796
@@ -186,19 +185,6 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 10
   m_InterpolateMovement: 1
---- !u!114 &114000013820140202
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012935290920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4e34208dfcea494c9acfb74d0f43815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  bullet: {fileID: 1000012935290920, guid: 9c6319b3232634a8c9a6279cf337e0ee, type: 2}
 --- !u!212 &212000012262712454
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -228,7 +214,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -354108773
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 155d670f70baf9f4aaf883c519d15324, type: 3}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
