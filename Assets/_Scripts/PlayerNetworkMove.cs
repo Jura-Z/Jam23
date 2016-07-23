@@ -13,6 +13,9 @@ public class PlayerNetworkMove : NetworkBehaviour {
 	float hInput;
 	float vInput;
 
+	bool isGrounded = false;
+	GameObject groundedOn = null;
+
 	[Command]
 	void CmdFire(Vector3 shootPosition)
 	{
@@ -54,7 +57,12 @@ public class PlayerNetworkMove : NetworkBehaviour {
 		if(isLocalPlayer == false) return; // Don't check input if this isn't
 		// running on the local player object
 		hInput = Input.GetAxis("Horizontal");
-		vInput = Input.GetAxis("Vertical");
+		//vInput = Input.GetAxis("Vertical");
+
+		if (Input.GetKey (KeyCode.Space) && isGrounded)
+			vInput = 5;
+		else
+			vInput = 0;
 
 		if (Input.GetMouseButton (0)) {
 			var worldMousePosition = Input.mousePosition;
@@ -78,5 +86,30 @@ public class PlayerNetworkMove : NetworkBehaviour {
 
 		// Handle forward movement
 		body.MovePosition(body.position + mov * moveSpeed * Time.deltaTime);
+	}
+
+	void OnCollisionEnter2D(Collision2D coll) {
+
+		if(coll.gameObject.tag == "Ground")
+		{
+			Debug.Log ("2");
+			foreach(ContactPoint2D contact in coll.contacts)
+			{
+				if(contact.normal.y > 0.5)
+				{
+					isGrounded = true;
+					groundedOn = coll.gameObject;
+					break;
+				}
+			}
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D coll) {
+		if(coll.gameObject == groundedOn)
+		{
+			groundedOn = null;
+			isGrounded = false;
+		}
 	}
 }
