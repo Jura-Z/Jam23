@@ -60,6 +60,7 @@ public class PlayerNetworkMove : NetworkBehaviour {
 			worldMousePosition.z = 10.0f;
 			worldMousePosition = Camera.main.ScreenToWorldPoint(worldMousePosition);
 			Fire (worldMousePosition);
+			CmdFire (worldMousePosition);
 		}
 	}
 
