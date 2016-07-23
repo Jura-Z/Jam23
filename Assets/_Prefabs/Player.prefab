@@ -231,8 +231,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   bullet: {fileID: 1000012935290920, guid: 9c6319b3232634a8c9a6279cf337e0ee, type: 2}
-  jumpPower: 3
-  jumpDeceleration: 15
+  jumpPower: 4
+  jumpDeceleration: 10
 --- !u!114 &114000012618019420
 MonoBehaviour:
   m_ObjectHideFlags: 1
