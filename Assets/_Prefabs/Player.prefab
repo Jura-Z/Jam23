@@ -55,6 +55,7 @@ GameObject:
   - 114: {fileID: 114000010029495054}
   - 114: {fileID: 114000011034283796}
   - 114: {fileID: 114000012537748218}
+  - 114: {fileID: 114000013254370180}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -198,6 +199,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+--- !u!114 &114000013254370180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012935290920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f82f36ca75e83843a3364c8c30bc309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 212000012262712454}
+  player1AvatarImage: {fileID: 21300000, guid: 155d670f70baf9f4aaf883c519d15324, type: 3}
+  player2AvatarImage: {fileID: 21300000, guid: 6843d7b9a1d9c344dbf623cc96cd462a, type: 3}
 --- !u!212 &212000012262712454
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -10,7 +10,7 @@ public class PlayerNetworkMove : NetworkBehaviour {
 	float hInput;
 	float vInput;
 
-	void Awake()
+    void Awake()
 	{
 		body = GetComponent<Rigidbody2D>();
 	}
