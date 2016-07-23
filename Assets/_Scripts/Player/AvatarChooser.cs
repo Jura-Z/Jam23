@@ -16,27 +16,31 @@ public class AvatarChooser : NetworkBehaviour
 
     public override void OnStartClient()
     {
-        Debug.LogFormat("{3} 1 - {0} {1} {2}", this.isClient, this.isServer, this.isLocalPlayer, this.GetInstanceID());
-        if (isLocalPlayer == true)
-        {
-            target.sprite = player1AvatarImage;
-        }
-        else
-        {
-            target.sprite = player2AvatarImage;
-        }
+		if (this.netId.Value % 2 == 0)
+			target.sprite = player1AvatarImage;
+		else
+			target.sprite = player2AvatarImage;
+//        Debug.LogFormat("{3} 1 - {0} {1} {2}", this.isClient, this.isServer, this.isLocalPlayer, this.GetInstanceID());
+//        if (isLocalPlayer == true)
+//        {
+//            target.sprite = player1AvatarImage;
+//        }
+//        else
+//        {
+//            target.sprite = player2AvatarImage;
+//        }
     }
 
     public override void OnStartLocalPlayer()
     {
-        Debug.LogFormat("{3} 2 - {0} {1} {2}", this.isClient, this.isServer, this.isLocalPlayer, this.GetInstanceID());
-        if (isLocalPlayer == true)
-        {
-            target.sprite = player1AvatarImage;
-        }
-        else
-        {
-            target.sprite = player2AvatarImage;
-        }
+//        Debug.LogFormat("{3} 2 - {0} {1} {2}", this.isClient, this.isServer, this.isLocalPlayer, this.GetInstanceID());
+//        if (isLocalPlayer == true)
+//        {
+//            target.sprite = player1AvatarImage;
+//        }
+//        else
+//        {
+//            target.sprite = player2AvatarImage;
+//        }
     }
 }
